@@ -1,0 +1,19 @@
+# Ansible managed
+
+[user]
+	email = git@rgson.se
+	name = Robin Gustafsson
+[push]
+	default = simple
+[alias]
+	st = status
+	co = checkout
+	cm = commit
+	br = branch
+	cl = clean -Xdf
+	undo-commit = reset --soft HEAD^
+	quick-amend = commit -a --amend --no-edit
+	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+	permission-reset = "!git diff -p | grep -E \"^(diff|old mode|new mode)\" | sed -e \"s/^old/NEW/;s/^new/old/;s/^NEW/new/\" | git apply"
+[core]
+	editor = nano
