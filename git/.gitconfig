@@ -1,5 +1,3 @@
-# Ansible managed
-
 [user]
 	email = git@rgson.se
 	name = Robin Gustafsson
