@@ -11,7 +11,7 @@ export PATH=$PATH:~/bin
 ################################################################################
 # Alias
 
-alias ll='ls -alF'
+alias ll='ls -AlFh --time-style=long'
 alias la='ls -A'
 alias l='ls -CF'
 
