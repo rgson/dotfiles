@@ -5,8 +5,7 @@
 
 DEFAULT_USER='robin'    # Hidden from prompt
 
-
-export PATH=$PATH:~/bin
+export PATH=~/bin:~/.local/bin:$PATH
 
 ################################################################################
 # Alias
