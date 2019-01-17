@@ -2,7 +2,7 @@
 	email = robin@rgson.se
 	name = Robin Gustafsson
 [push]
-	default = simple
+	default = current
 [alias]
 	st = status
 	co = checkout
