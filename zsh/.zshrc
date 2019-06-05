@@ -10,6 +10,8 @@ export PATH=~/bin:~/.local/bin:$PATH
 ################################################################################
 # Alias
 
+alias zmv='noglob zmv -W'
+
 alias ll='ls -AlFh --time-style=long'
 alias la='ls -A'
 alias l='ls -CF'
@@ -240,4 +242,3 @@ if [[ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
 	typeset -A ZSH_HIGHLIGHT_STYLES
 	ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 fi
-
