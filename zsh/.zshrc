@@ -160,6 +160,10 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	GIT_PS1_STATESEPARATOR=' '
 fi
 
+_ps_clock() {
+	echo "%{$fg[black]%}%D{%k:%M:%S}"
+}
+
 _ps_user() {
 	local -a parts
 	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
@@ -205,28 +209,7 @@ _ps_context() {
 
 export PS1='$(_ps_user)$(_ps_cwd)$(_ps_git)$(_ps_status)$(_ps_caret)'
 export PS2='$(_ps_context)$(_ps_caret)'
-export RPS1=''
-
-_preexec_prompt_timestamp() {
-	local zero='%([BSUbfksu]|([FB]|){*})'
-
-	local str_date=$(date +"%H:%M:%S")
-	local len_right=$(( ${#str_date} + 1 ))
-	local start_right=$(($COLUMNS - $len_right))
-
-	local str_prompt="$(eval echo "$PROMPT")"
-	local len_prompt=${#${(S%%)str_prompt//$~zero/}}
-	local len_cmd=${#1}
-	local len_left=$(($len_cmd + $len_prompt))
-
-	local rdate="\033[${start_right}C ${fg[black]}${str_date}$reset_color"
-	if (( $len_left < $start_right )); then
-		echo -e "\033[1A$rdate"
-	else
-		echo -e $rdate
-	fi
-}
-add-zsh-hook preexec _preexec_prompt_timestamp
+export RPS1='$(_ps_clock)'
 
 ################################################################################
 # Plugins
