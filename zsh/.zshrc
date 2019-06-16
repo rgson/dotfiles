@@ -148,10 +148,6 @@ add-zsh-hook preexec _preexec_set_title
 # Prompt
 
 setopt PROMPT_SUBST
-if [[ "$TERM" != "dumb" ]]; then
-	autoload -U colors
-	colors
-fi
 if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	source /usr/lib/git-core/git-sh-prompt
 	GIT_PS1_SHOWDIRTYSTATE=1
@@ -161,24 +157,24 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 fi
 
 _ps_clock() {
-	echo "%{$fg[black]%}%D{%k:%M:%S}"
+	echo "%F{black}%D{%k:%M:%S} "
 }
 
 _ps_user() {
 	local -a parts
 	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
-		parts[1]="%{%(!.$fg[red].$fg[magenta])%}%n"
+		parts[1]="%(!.%F{red}.%F{magenta})%n"
 	fi
 	if [[ -n "$SSH_CONNECTION" ]]; then
-		parts[2]="%{$fg[blue]%}@%{$fg[magenta]%}%m"
+		parts[2]="%F{blue}@%F{magenta}%m"
 	fi
 	if [[ -n $parts ]]; then
-		echo "%{$bold_color%}${(j..)parts}%{$reset_color%} "
+		echo "%B${(j..)parts}%b "
 	fi
 }
 
 _ps_cwd() {
-	echo "%{$fg_bold[yellow]%}%25<…<%~%<<%{$reset_color%} "
+	echo "%B%F{yellow}%25<…<%~%<<%b "
 }
 
 _ps_git() {
@@ -188,23 +184,23 @@ _ps_git() {
 	if [[ $info = *$GIT_PS1_STATESEPARATOR* ]]; then
 		local state=${info##*$GIT_PS1_STATESEPARATOR}
 		info="${info%$GIT_PS1_STATESEPARATOR*} "
-		[[ $state =~ '[\*%]' ]] && info+="%{$fg[red]%}•"
-		[[ $state =~ '\+'    ]] && info+="%{$fg[yellow]%}•"
-		[[ $state =~ '\$'    ]] && info+="%{$fg[cyan]%}•"
+		[[ $state =~ '[\*%]' ]] && info+="%F{red}•"
+		[[ $state =~ '\+'    ]] && info+="%F{yellow}•"
+		[[ $state =~ '\$'    ]] && info+="%F{cyan}•"
 	fi
-	echo "%{$fg_bold[green]%}$info%{$reset_color%} "
+	echo "%B%F{green}$info%b "
 }
 
 _ps_status() {
-	echo "%(?..%{$fg_bold[red]%}⚑%{$reset_color%} )"
+	echo "%(?..%B%F{red}⚑%b)"
 }
 
 _ps_caret() {
-	echo "%{$bold_color%(!.$fg[red].$fg[blue])%}>%{$reset_color%} "
+	echo "%B%(!.%F{red}.%F{blue})>%b%F{default} "
 }
 
 _ps_context() {
-	echo "%{$fg_bold[magenta]%}%_%{$reset_color%} "
+	echo "%B%F{magenta}%_%b "
 }
 
 export PS1='$(_ps_user)$(_ps_cwd)$(_ps_git)$(_ps_status)$(_ps_caret)'
