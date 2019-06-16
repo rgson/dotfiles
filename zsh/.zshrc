@@ -18,44 +18,6 @@ alias l='ls -CF'
 
 alias open='xdg-open'
 
-alias img2jpg='mogrify -format jpg'
-
-################################################################################
-# Commands
-
-encrypt() {
-	out="$1.enc"
-	if [ -f $out ]; then
-		echo "File $out already exists."
-	else
-		openssl aes-256-cbc -salt -in $1 -out $out
-	fi
-}
-
-decrypt() {
-	out=${1%*.enc}
-	if [ -f $out ]; then
-		echo "File $out already exists."
-	else
-		openssl aes-256-cbc -d -in $1 -out $out
-	fi
-}
-
-stopwatch() {
-	start=$(date +%s)
-	while :; do
-		echo -ne "$(date -u --date @$(( $(date +%s) - $start)) +%H:%M:%S)\r"
-	done
-}
-
-wrap80() {
-	# $1: line prefix (optional)
-	tr '\n' ' ' \
-	| fold -w $((80-$#1)) -s \
-	| cat - =(echo) \
-	| while read i; do echo "$1$i"; done
-}
-
 ################################################################################
 # Basic configuration
 
