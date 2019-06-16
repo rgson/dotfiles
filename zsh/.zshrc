@@ -111,6 +111,7 @@ add-zsh-hook preexec _preexec_set_title
 # Prompt
 
 setopt PROMPT_SUBST
+
 if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	source /usr/lib/git-core/git-sh-prompt
 	GIT_PS1_SHOWDIRTYSTATE=1
@@ -118,28 +119,6 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	GIT_PS1_SHOWUNTRACKEDFILES=1
 	GIT_PS1_STATESEPARATOR=' '
 fi
-
-_ps_clock() {
-	echo "%F{black}%D{%k:%M:%S} "
-}
-
-_ps_user() {
-	local -a parts
-	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
-		parts[1]="%(!.%F{red}.%F{magenta})%n"
-	fi
-	if [[ -n "$SSH_CONNECTION" ]]; then
-		parts[2]="%F{blue}@%F{magenta}%m"
-	fi
-	if [[ -n $parts ]]; then
-		echo "%B${(j..)parts}%b "
-	fi
-}
-
-_ps_cwd() {
-	echo "%B%F{yellow}%25<…<%~%<<%b "
-}
-
 _ps_git() {
 	type '__git_ps1' &>/dev/null || return
 	local info=$(__git_ps1 '%s')
@@ -151,24 +130,34 @@ _ps_git() {
 		[[ $state =~ '\+'    ]] && info+="%F{yellow}•"
 		[[ $state =~ '\$'    ]] && info+="%F{cyan}•"
 	fi
-	echo "%B%F{green}$info%b "
+	echo "%B%F{green}$info%b"
 }
 
-_ps_status() {
-	echo "%(?..%B%F{red}⚑%b)"
+_precmd_psvar() {
+	psvar[1]=$([[ $? = 0 ]] || echo $?)
+	psvar[2]=$([[ $USER = $DEFAULT_USER ]] || echo $USER)
+	psvar[3]=$SSH_CONNECTION
 }
+add-zsh-hook precmd _precmd_psvar
 
-_ps_caret() {
-	echo "%B%(!.%F{red}.%F{blue})>%b%F{default} "
+_precmd_prompt_info() {
+	local -a p
+	p[1]='%(!.%F{red}.%(2V.%F{magenta}.%F{blue}))%n%(3V.%F{magenta}.%F{blue})@%m'
+	p[2]='%B%F{yellow}%25<…<%~%<<%b'
+	p[3]=$(_ps_git)
+	p[4]='%(1V.%B%F{red}⚑%b.)'
+	p[5]='%F{black}%D{%k:%M:%S}'
+	p=($p)
+	print -P "\n${(j. .)p}"
 }
+add-zsh-hook precmd _precmd_prompt_info
 
-_ps_context() {
-	echo "%B%F{magenta}%_%b "
-}
+_ps_caret='%B%(!.%F{red}.%(2V.%F{magenta}.%F{blue}))>%b%F{default} '
+_ps_context='%B%F{black}%_%b'
 
-export PS1='$(_ps_user)$(_ps_cwd)$(_ps_git)$(_ps_status)$(_ps_caret)'
-export PS2='$(_ps_context)$(_ps_caret)'
-export RPS1='$(_ps_clock)'
+PS1="$_ps_caret"
+PS2="$_ps_context $_ps_caret"
+RPS1=''
 
 ################################################################################
 # Plugins
