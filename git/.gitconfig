@@ -18,3 +18,5 @@
 	editor = nano
 [pull]
 	ff = only
+[rebase]
+	autoSquash = true
