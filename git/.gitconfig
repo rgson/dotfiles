@@ -20,3 +20,4 @@
 	ff = only
 [rebase]
 	autoSquash = true
+	autostash = true
