@@ -21,3 +21,5 @@
 [rebase]
 	autoSquash = true
 	autostash = true
+[pager]
+	branch = false
