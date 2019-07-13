@@ -16,3 +16,7 @@ wrap80() {
 	| cat - =(echo) \
 	| while read i; do echo "$1$i"; done
 }
+
+md5() {
+	openssl md5 $@ | cut -d' ' -f2
+}
