@@ -20,3 +20,7 @@ wrap80() {
 md5() {
 	openssl md5 $@ | cut -d' ' -f2
 }
+
+genpasswd() {
+	tr -dc A-Za-z0-9 </dev/urandom | head -c${1:-16} && echo
+}
