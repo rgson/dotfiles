@@ -24,3 +24,8 @@ md5() {
 genpasswd() {
 	tr -dc A-Za-z0-9 </dev/urandom | head -c${1:-16} && echo
 }
+
+xungrab() {
+	setxkbmap -option grab:break_actions
+	xdotool key XF86Ungrab
+}
