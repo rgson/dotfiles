@@ -14,6 +14,7 @@
 	addnp = -c core.fileMode=false add
 	ca = commit --amend --no-edit
 	rb = rebase
+	join = "!f(){ git merge \"$@\" && git branch -d \"$@\"; }; f"
 [core]
 	editor = nano
 [pull]
