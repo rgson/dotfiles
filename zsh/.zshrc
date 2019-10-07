@@ -75,6 +75,7 @@ bindkey '^[[1;5C' emacs-forward-word  # Ctrl + Right
 bindkey '^[[1;5D' emacs-backward-word # Ctrl + Left
 bindkey '^[[3;5~' kill-word           # Ctrl + Delete
 bindkey '^H'      backward-kill-word  # Ctrl + Backspace
+bindkey '^[[Z'    reverse-menu-complete  # Shift + Tab
 
 if [[ "${terminfo[kcuu1]}" != "" ]]; then  # [Start typing] + Up
 	autoload -U up-line-or-beginning-search
