@@ -1,0 +1,30 @@
+[global_config]
+  title_hide_sizetext = True
+  title_transmit_fg_color = "#e15158"
+  title_transmit_bg_color = "#383c4a"
+  title_receive_fg_color = "#5294e2"
+  title_receive_bg_color = "#383c4a"
+  title_inactive_fg_color = "#d3dae3"
+  title_inactive_bg_color = "#383c4a"
+  title_use_system_font = False
+  title_font = Bitstream Vera Sans Mono 9
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#383c4a"
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+    font = Bitstream Vera Sans Mono 9
+    foreground_color = "#d3dae3"
+    scrollback_infinite = True
+    palette = "#4b5162:#e15158:#a7e151:#e1af51:#5294e2:#ba75e8:#51b8e1:#d3dae3:#000000:#e15158:#a7e151:#e1af51:#5294e2:#ba75e8:#51b8e1:#ffffff"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
