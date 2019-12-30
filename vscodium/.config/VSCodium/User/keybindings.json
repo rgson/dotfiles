@@ -1,0 +1,14 @@
+[
+	{
+		"key": "ctrl+q",
+		"command": "-workbench.action.quit"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditorInGroup"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditorInGroup"
+	}
+]
