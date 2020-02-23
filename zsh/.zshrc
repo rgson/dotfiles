@@ -16,6 +16,8 @@ alias ll='ls -AlFh --time-style=long'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias x='chmod +x'
+
 alias open='xdg-open'
 
 ################################################################################
