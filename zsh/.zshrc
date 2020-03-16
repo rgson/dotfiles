@@ -114,6 +114,8 @@ add-zsh-hook preexec _preexec_set_title
 ################################################################################
 # Prompt
 
+ACTIVE_CHROOT=$(! cat /etc/debian_chroot 2>/dev/null && ischroot && echo chroot)
+
 setopt PROMPT_SUBST
 
 if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
@@ -141,13 +143,14 @@ _precmd_psvar() {
 	psvar[1]=$([[ $? = 0 ]] || echo $?)
 	psvar[2]=$([[ $USER = $DEFAULT_USER ]] || echo $USER)
 	psvar[3]=$SSH_CONNECTION
+	psvar[4]=$ACTIVE_CHROOT
 }
 add-zsh-hook precmd _precmd_psvar
 
 _precmd_prompt_info() {
 	local -a p
 	p[1]='%(!.%F{red}.%(2V.%F{magenta}.%F{blue}))%n%(3V.%F{magenta}.%F{blue})@%m'
-	p[2]='%B%F{yellow}%25<…<%~%<<%b'
+	p[2]='%(4V.%F{magenta}%4v:.)%B%F{yellow}%25<…<%~%<<%b'
 	p[3]=$(_ps_git)
 	p[4]='%(1V.%B%F{red}⚑%b.)'
 	p[5]='%F{black}%D{%k:%M:%S}'
