@@ -9,6 +9,7 @@
   title_use_system_font = False
   title_font = Bitstream Vera Sans Mono 9
 [keybindings]
+  group_tab = <Super>h
 [profiles]
   [[default]]
     background_color = "#383c4a"
