@@ -53,6 +53,7 @@
   "window.closeWhenEmpty": true,
   "window.menuBarVisibility": "default",
   "window.openFilesInNewWindow": "default",
+  "window.openWithoutArgumentsInNewWindow": "on",
   "window.restoreWindows": "none",
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
