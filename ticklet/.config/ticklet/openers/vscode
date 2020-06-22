@@ -1,8 +1,26 @@
 #!/bin/zsh
-#
-# Opens the files and their containing directories in Visual Studio Code
-#
 
-files=$(for file in $@; do echo $file; done)
-directories=$(xargs <<<$files -r -n1 dirname)
-xargs <<<$files <<<$directories -r code -n
+# Transform arguments to new-line separated file list
+files=$(for x in $@; do echo $x; done)
+
+# Special treatment for the notes file
+notes=$(grep    '/tickets/\(active\|archive\)/[^/]\+/notes.md$' <<<$files)
+files=$(grep -v '/tickets/\(active\|archive\)/[^/]\+/notes.md$' <<<$files)
+
+# Get containing directory names
+dirs=$(xargs <<<$files -r -n1 dirname)
+
+# Prefer git repo root directories
+dirs=$(<<<$dirs while read d; do
+		git -C $d rev-parse --show-toplevel 2>/dev/null || echo $d; done)
+
+# Add notes back into the mix
+files=$(echo $notes; cat <<<$files)
+dirs=$(dirname $notes; cat <<<$dirs)
+
+# Keep only uniques
+files=$(sort <<<$files | uniq)
+dirs=$(sort <<<$dirs | uniq)
+
+# Open all in VS Code
+xargs <<<$dirs <<<$files -r code -n
