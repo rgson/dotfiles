@@ -70,6 +70,9 @@
   "[haskell]": {
     "editor.insertSpaces": true,
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
   },
