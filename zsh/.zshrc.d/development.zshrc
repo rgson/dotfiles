@@ -7,6 +7,10 @@ codemode() {
 	exit
 }
 
+godoted() {
+	nohup godot --editor --path ${1:-.} >/dev/null 2>&1 &!
+}
+
 vagrant() {
 	if [[ $@ == 'reboot' ]]; then
 		command vagrant halt && vagrant up
