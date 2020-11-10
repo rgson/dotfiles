@@ -1,0 +1,12 @@
+$external_commands = {
+	'starting-build-commands' => [
+		'cd %SBUILD_PKGBUILD_DIR && find . | sort >/tmp/file-list.pre-build',
+	],
+	'chroot-cleanup-commands' => [
+		'cd %SBUILD_PKGBUILD_DIR && ./debian/rules clean',
+		'cd %SBUILD_PKGBUILD_DIR && find . | sort >/tmp/file-list.post-build',
+		'diff -U0 /tmp/file-list.pre-build /tmp/file-list.post-build',
+	]
+};
+
+1;
