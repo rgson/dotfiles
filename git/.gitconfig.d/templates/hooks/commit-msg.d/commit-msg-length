@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+while (<>) {
+	chomp;
+	my $limit = $. == 1 ? 50 : $. == 2 ? 0 : 72;
+	print "[WARNING] Line $. is >$limit characters\n" if (length > $limit);
+}

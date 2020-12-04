@@ -26,3 +26,5 @@
 	branch = false
 [fetch]
 	prune = true
+[init]
+	templatedir = ~/.gitconfig.d/templates

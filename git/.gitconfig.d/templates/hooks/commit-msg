@@ -1,0 +1,2 @@
+#!/bin/sh
+run-parts --arg "$1" "${0}.d"
