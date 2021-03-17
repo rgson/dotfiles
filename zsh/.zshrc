@@ -118,13 +118,16 @@ ACTIVE_CHROOT=$(! cat /etc/debian_chroot 2>/dev/null && ischroot && echo chroot)
 
 setopt PROMPT_SUBST
 
-if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
+if [[ -e /usr/libexec/git-core/git-sh-prompt ]]; then
+	source /usr/libexec/git-core/git-sh-prompt
+elif [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	source /usr/lib/git-core/git-sh-prompt
-	GIT_PS1_SHOWDIRTYSTATE=1
-	GIT_PS1_SHOWSTASHSTATE=1
-	GIT_PS1_SHOWUNTRACKEDFILES=1
-	GIT_PS1_STATESEPARATOR=' '
 fi
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_STATESEPARATOR=' '
+
 _ps_git() {
 	type '__git_ps1' &>/dev/null || return
 	local info=$(__git_ps1 '%s')
