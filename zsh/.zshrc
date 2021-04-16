@@ -30,6 +30,7 @@ autoload -Uz add-zsh-hook
 
 WORDCHARS="${WORDCHARS:s#/#}" # Treat / as word separator
 REPORTTIME=10 # Report CPU usage for long-running commands (10 seconds)
+TIMEFMT+=' %M MB mem'  # Show max memory usage in time reports
 
 # History
 setopt histignorealldups sharehistory
