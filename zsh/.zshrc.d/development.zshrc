@@ -11,6 +11,11 @@ godoted() {
 	nohup godot --editor --path ${1:-.} >/dev/null 2>&1 &!
 }
 
+gut() {
+	godot --debug --path . -s addons/gut/gut_cmdln.gd \
+		-gdir=res://test -ginclude_subdirs -gmaximize -gexit
+}
+
 vagrant() {
 	if [[ $@ == 'reboot' ]]; then
 		command vagrant halt && vagrant up
