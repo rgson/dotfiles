@@ -43,6 +43,7 @@
   "gitlens.views.repositories.autoRefresh": false,
   "gitlens.views.repositories.avatars": false,
   "gitlens.views.search.avatars": false,
+  "godot_tools.editor_path": "/usr/local/bin/godot",
   "npm.fetchOnlinePackageInfo": false,
   "python.pythonPath": "/usr/bin/python3",
   "rewrap.autoWrap.enabled": true,
