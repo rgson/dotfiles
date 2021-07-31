@@ -12,8 +12,9 @@ godoted() {
 }
 
 gut() {
-	godot --debug --path . -s addons/gut/gut_cmdln.gd \
-		-gdir=res://test -ginclude_subdirs -gmaximize -gexit
+	godot --debug-collisions --path . -s addons/gut/gut_cmdln.gd \
+		-gdir=res://test -ginclude_subdirs -gmaximize -gexit \
+		$@
 }
 
 vagrant() {
