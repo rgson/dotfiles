@@ -28,3 +28,11 @@
 	prune = true
 [init]
 	templatedir = ~/.gitconfig.d/templates
+[url "git@github.com:"]
+	insteadOf = github:
+[url "git@gitlab.com:"]
+	insteadOf = gitlab:
+[url "git@salsa.debian.org:"]
+	insteadOf = salsa:
+[url "git@salsa.debian.org:debian/"]
+	insteadOf = debian:
