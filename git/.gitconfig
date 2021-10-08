@@ -17,6 +17,7 @@
 	join = "!f(){ git merge \"$@\" && git branch -d \"$@\"; }; f"
 [core]
 	editor = nano
+	hooksPath = ~/.config/git/hooks
 [pull]
 	ff = only
 [rebase]
@@ -26,8 +27,6 @@
 	branch = false
 [fetch]
 	prune = true
-[init]
-	templatedir = ~/.gitconfig.d/templates
 [url "git@github.com:"]
 	insteadOf = github:
 [url "git@gitlab.com:"]
