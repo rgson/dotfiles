@@ -74,6 +74,9 @@
   "[haskell]": {
     "editor.insertSpaces": true,
   },
+  "[html]": {
+    "rewrap.autoWrap.enabled": false,
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
