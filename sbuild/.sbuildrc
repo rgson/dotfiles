@@ -1,4 +1,6 @@
 $clean_source = 0;
+$build_source = 1;
+$source_only_changes = 1;
 $external_commands = {
 	'starting-build-commands' => [
 		'cd %SBUILD_PKGBUILD_DIR && find . | sort | while read x; do stat --printf "%n  %F  " "$x"; if [ -f "$x" ]; then md5sum "$x" | cut -d\  -f1; else echo; fi; done >/tmp/file-list.pre-build',
