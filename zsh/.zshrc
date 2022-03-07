@@ -115,7 +115,10 @@ add-zsh-hook preexec _preexec_set_title
 ################################################################################
 # Prompt
 
-ACTIVE_CHROOT=$(! cat /etc/debian_chroot 2>/dev/null && ischroot && echo chroot)
+ACTIVE_CHROOT=$(
+	! cat /etc/debian_chroot 2>/dev/null &&
+	command -v ischroot &>/dev/null && ischroot && echo chroot
+)
 
 setopt PROMPT_SUBST
 
