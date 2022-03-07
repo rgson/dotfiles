@@ -12,7 +12,7 @@ export PATH=~/bin:~/.local/bin:/sbin:/usr/sbin:$PATH
 
 alias zmv='noglob zmv -W'
 
-alias ll='ls -AlFh --time-style=long'
+alias ll='ls -AlFh -D "%Y-%m-%d %H:%M"'
 alias la='ls -A'
 alias l='ls -CF'
 
