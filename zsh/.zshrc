@@ -18,8 +18,6 @@ alias l='ls -CF'
 
 alias x='chmod +x'
 
-alias open='xdg-open'
-
 ################################################################################
 # Basic configuration
 
