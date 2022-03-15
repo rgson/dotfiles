@@ -3,6 +3,7 @@
 
 brew 'debianutils'
 brew 'git'
+brew 'git-absorb'
 brew 'ncdu'
 brew 'stow'
 brew 'tig'
