@@ -4,6 +4,7 @@
 brew 'debianutils'
 brew 'git'
 brew 'git-absorb'
+brew 'gnu-sed'
 brew 'ncdu'
 brew 'stow'
 brew 'tig'
