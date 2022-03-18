@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+export BUILDKIT_PROGRESS=plain
+
 codemode() {
 	gnome-terminal --geometry 80x88+0+0 --tab --working-directory=$1
 	code $1
