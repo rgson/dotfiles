@@ -126,6 +126,8 @@ if [[ -e /usr/libexec/git-core/git-sh-prompt ]]; then
 	source /usr/libexec/git-core/git-sh-prompt
 elif [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	source /usr/lib/git-core/git-sh-prompt
+elif [[ -e /opt/homebrew/etc/bash_completion.d/git-prompt.sh ]]; then
+	source /opt/homebrew/etc/bash_completion.d/git-prompt.sh
 fi
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
