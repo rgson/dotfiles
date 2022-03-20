@@ -2,13 +2,6 @@
 
 export BUILDKIT_PROGRESS=plain
 
-codemode() {
-	gnome-terminal --geometry 80x88+0+0 --tab --working-directory=$1
-	code $1
-	open $1
-	exit
-}
-
 godoted() {
 	nohup godot --editor --path ${1:-.} >/dev/null 2>&1 &!
 }

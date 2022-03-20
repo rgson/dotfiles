@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-alias img2jpg='mogrify -format jpg'
-
 stopwatch() {
 	start=$(date +%s)
 	while :; do
@@ -15,10 +13,6 @@ wrap80() {
 	| fold -w $((80-$#1)) -s \
 	| cat - =(echo) \
 	| while read i; do echo "$1$i"; done
-}
-
-md5() {
-	openssl md5 $@ | cut -d' ' -f2
 }
 
 genpasswd() {
