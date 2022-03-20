@@ -4,6 +4,9 @@ Dotfiles managed with Git and GNU Stow.
 
 Inspired by ["Using GNU Stow to manage your dotfiles"](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html).
 
+> ⚠️ Some config files (e.g. git, zsh) contain personal information such as my
+> name, e-mail address and GPG key ID. Take care to replace this information
+> with your own.
 
 ## Process
 
