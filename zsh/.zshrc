@@ -12,11 +12,13 @@ export PATH=~/bin:~/.local/bin:/sbin:/usr/sbin:$PATH
 
 alias zmv='noglob zmv -W'
 
-alias ll='ls -AlFh -D "%Y-%m-%d %H:%M"'
+alias ll='ls -AlFh --time-style=long'
 alias la='ls -A'
 alias l='ls -CF'
 
 alias x='chmod +x'
+
+alias open='xdg-open'
 
 ################################################################################
 # Basic configuration
