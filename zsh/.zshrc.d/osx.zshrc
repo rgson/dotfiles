@@ -13,3 +13,6 @@ fi
 if command -v gsed &>/dev/null; then
 	alias sed=gsed
 fi
+
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
