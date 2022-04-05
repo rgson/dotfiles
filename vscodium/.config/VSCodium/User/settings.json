@@ -1,6 +1,7 @@
 {
   "editor.fontFamily": "'SauceCodePro Nerd Font Mono', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontSize": 11,
+  "editor.formatOnSaveMode": "modifications",
   "editor.insertSpaces": false,
   "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": true,
