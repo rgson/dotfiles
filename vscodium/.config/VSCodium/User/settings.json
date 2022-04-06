@@ -65,7 +65,7 @@
   "workbench.colorCustomizations": {
     "editorWhitespace.foreground": "#fff4",
   },
-  "workbench.colorTheme": "Arc-Dark",
+  "workbench.colorTheme": "Nord",
   "workbench.enableExperiments": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.sideBar.location": "left",
