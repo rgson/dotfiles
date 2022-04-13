@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+if [ -f pyproject.toml ] \
+	&& which black >/dev/null 2>&1 \
+	&& grep '[tool.black]' pyproject.toml >/dev/null 2>&1
+then
+	black --check -q .
+fi
