@@ -88,6 +88,7 @@
   "[python]": {
     "editor.insertSpaces": true,
     "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
