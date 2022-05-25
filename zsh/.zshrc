@@ -10,15 +10,12 @@ export PATH=~/bin:~/.local/bin:/sbin:/usr/sbin:$PATH
 ################################################################################
 # Alias
 
-alias zmv='noglob zmv -W'
-
-alias ll='ls -AlFh --time-style=long'
-alias la='ls -A'
 alias l='ls -CF'
-
-alias x='chmod +x'
-
+alias la='ls -A'
+alias ll='ls -AlFh --time-style=long'
 alias open='xdg-open'
+alias x='chmod +x'
+alias zmv='noglob zmv -W'
 
 ################################################################################
 # Basic configuration
