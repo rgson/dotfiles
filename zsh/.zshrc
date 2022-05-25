@@ -10,6 +10,7 @@ export PATH=~/bin:~/.local/bin:/sbin:/usr/sbin:$PATH
 ################################################################################
 # Alias
 
+alias grep='grep --exclude-dir .git'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -AlFh --time-style=long'
