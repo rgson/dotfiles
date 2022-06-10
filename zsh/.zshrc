@@ -31,7 +31,7 @@ REPORTTIME=10 # Report CPU usage for long-running commands (10 seconds)
 TIMEFMT+=' %M MB mem'  # Show max memory usage in time reports
 
 # History
-setopt histignorealldups sharehistory
+setopt histignorealldups histignorespace sharehistory
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
