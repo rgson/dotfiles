@@ -16,7 +16,7 @@ wrap80() {
 }
 
 genpasswd() {
-	tr -dc A-Za-z0-9 </dev/urandom | head -c${1:-16} && echo
+	LC_CTYPE=C tr -dc '[:alnum:]' < /dev/urandom | head -c ${1:-16} && echo
 }
 
 xungrab() {
