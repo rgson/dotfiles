@@ -13,6 +13,7 @@
   "editor.suggestSelection": "first",
   "editor.tabSize": 4,
   "editor.trimAutoWhitespace": true,
+  "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": false,
