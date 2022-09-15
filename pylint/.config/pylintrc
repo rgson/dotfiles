@@ -1,0 +1,17 @@
+[MASTER]
+jobs=0
+
+[FORMAT]
+max-line-length=79
+
+[MESSAGES CONTROL]
+extension-pkg-whitelist=
+	pydantic
+disable=
+	duplicate-code,
+	fixme,
+	format,
+	import-error,
+	missing-class-docstring,
+	missing-function-docstring,
+	missing-module-docstring,
