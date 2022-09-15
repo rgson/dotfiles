@@ -50,6 +50,7 @@
   "npm.fetchOnlinePackageInfo": false,
   "python.pythonPath": "/usr/bin/python3",
   "python.formatting.provider": "black",
+  "python.linting.pylintEnabled": true,
   "rewrap.autoWrap.enabled": true,
   "telemetry.enableCrashReporter": false,
   "terminal.external.linuxExec": "gnome-terminal",
