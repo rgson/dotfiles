@@ -183,6 +183,10 @@ done
 # Syntax highlighting
 if [[ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
 	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ -e /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if [[ -v ZSH_HIGHLIGHT_HIGHLIGHTERS ]]; then
 	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 	typeset -A ZSH_HIGHLIGHT_STYLES
 	ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
