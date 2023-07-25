@@ -1,2 +1,2 @@
 export DEBFULLNAME='Robin Gustafsson'
-export DEBEMAIL='robin@rgson.se'
+export DEBEMAIL='rgson@debian.org'
