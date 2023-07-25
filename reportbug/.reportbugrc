@@ -10,7 +10,7 @@ ui text
 #offline
 # name and email setting (if non-default)
 # realname "Robin Gustafsson"
-email "robin@rgson.se"
+email "rgson@debian.org"
 # If nothing else works, remove the # at the beginning
 # of the following three lines:
 #no-cc
