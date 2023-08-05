@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+alias hibernate='systemctl hibernate'
+
 stopwatch() {
 	start=$(date +%s)
 	while :; do
