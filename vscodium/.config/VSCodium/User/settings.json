@@ -1,5 +1,31 @@
 {
-  "black-formatter.path": ["black"],
+  "[csharp]": {
+    "editor.formatOnSave": true
+  },
+  "[haskell]": {
+    "editor.insertSpaces": true
+  },
+  "[html]": {
+    "rewrap.autoWrap.enabled": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.insertSpaces": true
+  },
+  "black-formatter.path": [
+    "black"
+  ],
   "editor.fontFamily": "'SauceCodePro Nerd Font Mono', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontSize": 11,
   "editor.formatOnSaveMode": "modifications",
@@ -10,7 +36,10 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "editor.smoothScrolling": true,
   "editor.stickyScroll.enabled": true,
   "editor.suggestSelection": "first",
@@ -23,12 +52,13 @@
     "*.avsc": "json",
     "*.cgi": "perl",
     "*.inc": "php",
-    "Vagrantfile": "ruby",
+    "Vagrantfile": "ruby"
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "git.openRepositoryInParentFolders": "never",
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
@@ -41,65 +71,54 @@
     "suppressFileNotUnderSourceControlWarning": false,
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
+    "suppressNoRepositoryWarning": false
   },
   "gitlens.blame.avatars": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.enabled": false,
+  "gitlens.telemetry.enabled": false,
   "gitlens.views.repositories.autoRefresh": false,
   "gitlens.views.repositories.avatars": false,
-  "godot_tools.editor_path": "/usr/local/bin/godot",
-  "isort.path": ["isort"],
+  "godotTools.editorPath.godot3": "/usr/local/bin/godot3",
+  "godotTools.editorPath.godot4": "/usr/local/bin/godot4",
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
+  "isort.path": [
+    "isort"
+  ],
   "jupyter.interactiveWindow.creationMode": "perFile",
   "npm.fetchOnlinePackageInfo": false,
-  "pylint.path": ["pylint"],
+  "pylint.path": [
+    "pylint"
+  ],
+  "python.defaultInterpreterPath": "/usr/bin/python3",
   "rewrap.autoWrap.enabled": true,
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.startupPrompt": "never",
   "telemetry.telemetryLevel": "off",
   "terminal.external.linuxExec": "gnome-terminal",
   "terminal.integrated.cursorStyle": "line",
   "update.mode": "none",
   "update.showReleaseNotes": false,
   "window.closeWhenEmpty": true,
-  "window.menuBarVisibility": "default",
+  "window.confirmSaveUntitledWorkspace": false,
   "window.openFilesInNewWindow": "default",
   "window.openWithoutArgumentsInNewWindow": "on",
   "window.restoreWindows": "none",
+  "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
-    "editorWhitespace.foreground": "#fff4",
+    "editorWhitespace.foreground": "#fff4"
   },
   "workbench.colorTheme": "Nord",
   "workbench.editor.empty.hint": "hidden",
   "workbench.enableExperiments": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.sideBar.location": "left",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.tree.enableStickyScroll": true,
-  "[csharp]": {
-    "editor.formatOnSave": true,
-  },
-  "[haskell]": {
-    "editor.insertSpaces": true,
-  },
-  "[html]": {
-    "rewrap.autoWrap.enabled": false,
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-  "[markdown]": {
-    "files.trimTrailingWhitespace": false,
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.insertSpaces": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "file",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit",
-    },
-  },
-  "security.workspace.trust.banner": "never",
-  "security.workspace.trust.emptyWindow": false,
-  "security.workspace.trust.startupPrompt": "never",
+  "workbench.tree.enableStickyScroll": true
 }
