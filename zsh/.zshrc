@@ -120,13 +120,18 @@ ACTIVE_CHROOT=$(
 
 setopt PROMPT_SUBST
 
-if [[ -e /usr/libexec/git-core/git-sh-prompt ]]; then
-	source /usr/libexec/git-core/git-sh-prompt
-elif [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
-	source /usr/lib/git-core/git-sh-prompt
-elif [[ -e /opt/homebrew/etc/bash_completion.d/git-prompt.sh ]]; then
-	source /opt/homebrew/etc/bash_completion.d/git-prompt.sh
-fi
+for git_sh_prompt in \
+	/usr/libexec/git-core/git-sh-prompt \
+	/usr/lib/git-core/git-sh-prompt \
+	/usr/share/git-core/contrib/completion/git-prompt.sh \
+	/opt/homebrew/etc/bash_completion.d/git-prompt.sh \
+; do
+	if [[ -e $git_sh_prompt ]]; then
+		source $git_sh_prompt
+		break
+	fi
+done
+
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
