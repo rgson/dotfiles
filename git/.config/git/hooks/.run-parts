@@ -1,0 +1,2 @@
+#!/bin/zsh
+run-parts --arg=$^@ -- "${0}.d"
