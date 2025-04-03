@@ -23,6 +23,8 @@
 [rebase]
 	autoSquash = true
 	autostash = true
+[tag]
+	sort = version:refname
 [pager]
 	branch = false
 [fetch]
