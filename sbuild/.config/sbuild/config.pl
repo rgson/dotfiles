@@ -1,7 +1,12 @@
 $key_id = 'B26C2ED3732462219C3D1DFE293A3C91D188369C';
+
+$chroot_mode = 'unshare';
+$unshare_mmdebstrap_keep_tarball = 1;
+
 $clean_source = 0;
 $build_source = 1;
 $source_only_changes = 1;
+
 #$build_env_cmnd = '/usr/local/bin/build-entrypoint';
 $external_commands = {
 #	'chroot-setup-commands' => [
