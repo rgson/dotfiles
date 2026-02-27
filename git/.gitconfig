@@ -18,6 +18,8 @@
 [core]
 	editor = vim
 	hooksPath = ~/.config/git/hooks
+[init]
+	defaultBranch = main
 [pull]
 	ff = only
 [rebase]
